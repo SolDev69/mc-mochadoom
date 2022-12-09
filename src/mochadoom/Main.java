@@ -2,6 +2,10 @@ package mochadoom;
 
 public class Main {
   public static void main(String... args) {
-    Engine.main(new String[]{"-iwad", "./DOOM.WAD"});
+    try {
+      Engine.main(new String[]{"-iwad", "./DOOM.WAD"});
+    } catch (IOException e) {
+      System.out.println("Error loading DOOM.WAD!");
+      e.printStackTrace();
   }
 }
